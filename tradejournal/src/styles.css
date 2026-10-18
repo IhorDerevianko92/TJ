@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #0e0b12;
+  --color-foreground: #f3eef8;
+  --color-card: #16111c;
+  --color-row-alt: #1a1422;
+  --color-muted: #241b2e;
+  --color-muted-foreground: #a898b5;
+  --color-border: #2c2238;
+  --color-input: #1c1524;
+  --color-primary: #6b3aa8;
+  --color-primary-foreground: #f8f4ff;
+  --color-secondary: #241b2e;
+  --color-secondary-foreground: #f3eef8;
+  --color-ring: #8b5cc7;
+  --color-header: #3b1d63;
+  --color-header-foreground: #f6f0ff;
+  --color-long: #157a45;
+  --color-long-bg: #c6efce;
+  --color-short: #9c1a1a;
+  --color-short-bg: #ffc7ce;
+  --color-open: #7a5800;
+  --color-open-bg: #ffe599;
+  --color-be: #7a5b00;
+  --color-be-bg: #fff2cc;
+  --color-equity: #3dcc8a;
+  --color-danger: #c43d3d;
+  --color-danger-foreground: #fff5f5;
+  --color-next: #f0c14b;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --motion-fast: 250ms;
+  --motion-quick: 150ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    min-height: 100%;
+    color-scheme: dark;
+  }
+
+  input[type="date"] {
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
